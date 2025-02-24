@@ -5,9 +5,9 @@ exports.connectDB = async () => {
             useNewUrlParser: true,
             useUnifiedTopology: true,
         });
-        console.log("MongoDB ishlamoqda");
+        console.log("Mongodb established");
     } catch (e) {
-        console.error(`MongoDB xatosi: ${e.message}`);
+        console.error(`Mongodb error: ${e.message}`);
         process.exit(1);
     }
 }
