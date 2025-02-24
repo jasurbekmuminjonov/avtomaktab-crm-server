@@ -4,7 +4,7 @@ exports.createStudent = async (req, res) => {
     try {
         const { as_id } = req.user
         req.body.as_id = as_id;
-        const existStudent = await Student.findOne({ phone: req.body.phone });
+        const existStudent = await Student.findOne({ phone: req.body.phone, status: 'active' });
         if (existStudent) {
             return res.status(409).json({ message: "Bu telefon raqam bilan o'quvchi mavjud" });
         }

@@ -9,7 +9,7 @@ exports.createteacher = async (req, res) => {
         if (role !== "admin") {
             return res.status(403).json({ message: "O'qituvchini faqat admin yarata oladi" });
         }
-        const existTeacher = await Teacher.findOne({ phone: req.body.phone });
+        const existTeacher = await Teacher.findOne({ phone: req.body.phone, status: 'active' });
         if (existTeacher) {
             return res.status(400).json({ message: "Bunday telefon raqam bilan o'qituvchi mavjud" });
         }
@@ -29,7 +29,7 @@ exports.createteacher = async (req, res) => {
 exports.loginteacher = async (req, res) => {
     try {
         const { phone, password } = req.body
-        const existTeacher = await Teacher.findOne({ phone: phone });
+        const existTeacher = await Teacher.findOne({ phone: phone, status: 'active' });
         const autoSchool = await AutoSchool.findById(existTeacher.as_id)
         if (!existTeacher) {
             return res.status(400).json({ message: "Bunday telefon raqam bilan o'qituvchi mavjud emas" });
