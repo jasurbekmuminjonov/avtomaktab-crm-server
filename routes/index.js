@@ -7,6 +7,7 @@ const { getSubjects, createSubject, updateSubject, deleteSubject } = require('..
 const { getGroups, deleteGroup, updateGroup, createGroup } = require('../controllers/groupController');
 const { getStudents, createStudent, updateStudent, deleteStudent } = require('../controllers/studentController');
 const { deletePayment, updatePayment, createPayment, getPayments } = require('../controllers/paymentController');
+const { createSpending, getAllSpending } = require('../controllers/spendingController');
 
 const rt = express.Router();
 
@@ -20,6 +21,9 @@ rt.post("/cashier/create", auth, createCashier)
 rt.post("/cashier/login", loginCashier)
 rt.put("/cashier/:id", auth, updateCashier)
 rt.delete("/cashier/:id", auth, deleteCashier)
+
+rt.get("/spending", auth, getAllSpending)
+rt.post("/spending/create", auth, createSpending)
 
 //teacher
 rt.get("/teacher", auth, getTeachers)
