@@ -1,7 +1,6 @@
 const mongoose = require('mongoose');
 
 const SpendingSchema = new mongoose.Schema({
-    title: String,
     description: String,
     amount: {
         type: Number,
