@@ -6,12 +6,11 @@ const StudentSchema = new mongoose.Schema({
     group_id: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Group',
-        required: true,
         default: null,
     },
     as_id: {
         type: mongoose.Schema.Types.ObjectId,
-        ref: 'Group',
+        ref: 'AutoSchool',
         required: true,
     },
     status: {

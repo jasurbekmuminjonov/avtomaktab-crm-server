@@ -11,17 +11,17 @@ exports.createPayment = async (req, res) => {
         }
         req.body.as_id = as_id;
         const student = await Student.findById(req.body.student_id);
-        const group = await Group.findById(student.group_id);
-        const subject = await Subject.findById(group.subject_id);
+        const group = await Group.findById(student?.group_id);
+        const subject = await Subject.findById(group?.subject_id);
         const payment = new Payment(req.body);
         await payment.save();
         const paymentData = {
             student_id: payment.student_id,
             student_name: student.name,
             group_id: payment.group_id,
-            group_name: group.group_number + group.group_name,
-            subject_id: subject.id,
-            subject_name: subject.name,
+            group_name: group?.group_number + group?.group_name,
+            subject_id: subject?.id,
+            subject_name: subject?.name,
             amount: payment.amount,
             payment_method: payment.payment_method,
             created_at: payment.createdAt,

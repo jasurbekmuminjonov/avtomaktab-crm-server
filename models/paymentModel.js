@@ -6,11 +6,6 @@ const PaymentSchema = new mongoose.Schema({
         ref: 'Student',
         required: true,
     },
-    group_id: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'Group',
-        required: true,
-    },
     payment_method: {
         type: String,
         required: true,

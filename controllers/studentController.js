@@ -56,7 +56,6 @@ exports.deleteStudent = async (req, res) => {
 exports.getStudents = async (req, res) => {
     try {
         const { as_id } = req.user
-
         const students = await Student.find({ as_id })
         res.status(200).json(students);
 

@@ -9,7 +9,7 @@ const SpendingSchema = new mongoose.Schema({
     },
     as_id: {
         type: mongoose.Schema.Types.ObjectId,
-        ref: 'Group',
+        ref: 'AutoSchool',
         required: true,
     },
 }, { timestamps: true });
