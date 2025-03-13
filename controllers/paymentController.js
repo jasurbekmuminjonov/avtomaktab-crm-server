@@ -23,6 +23,7 @@ exports.createPayment = async (req, res) => {
             subject_id: subject.id,
             subject_name: subject.name,
             amount: payment.amount,
+            payment_method: payment.payment_method,
             created_at: payment.createdAt,
         }
         res.status(200).json(paymentData);

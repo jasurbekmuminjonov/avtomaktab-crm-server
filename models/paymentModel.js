@@ -11,6 +11,11 @@ const PaymentSchema = new mongoose.Schema({
         ref: 'Group',
         required: true,
     },
+    payment_method: {
+        type: String,
+        required: true,
+        enum: ['cash', 'card', 'transfer']
+    },
     amount: {
         type: Number,
         required: true,
