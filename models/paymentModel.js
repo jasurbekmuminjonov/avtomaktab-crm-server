@@ -16,7 +16,12 @@ const PaymentSchema = new mongoose.Schema({
         type: Number,
         required: true,
         min: 0
-    }
+    },
+    as_id: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'AutoSchool',
+        required: true,
+    },
 }, { timestamps: true });
 
 module.exports = mongoose.model('Payment', PaymentSchema);
