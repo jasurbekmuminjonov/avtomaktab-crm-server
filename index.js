@@ -12,7 +12,7 @@ const limiter = rateLimit({
   max: 100,
   message: "Keyinroq urinib ko'ring",
 });
-
+// 
 app.use(cors());
 app.use(express.json());
 app.use(limiter);

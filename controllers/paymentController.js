@@ -33,6 +33,7 @@ exports.createPayment = async (req, res) => {
         return res.status(500).json({ message: "Serverda xatolik" });
     }
 }
+//
 exports.updatePayment = async (req, res) => {
     try {
         const { id } = req.params
@@ -68,9 +69,9 @@ exports.deletePayment = async (req, res) => {
 
 exports.getPayments = async (req, res) => {
     try {
-        const { ac_id } = req.user
+        const { as_id } = req.user
 
-        const payments = await Payment.find({ ac_id })
+        const payments = await Payment.find({ as_id })
         res.status(200).json(payments);
 
     } catch (err) {
