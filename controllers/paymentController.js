@@ -33,6 +33,7 @@ exports.createPayment = async (req, res) => {
         return res.status(500).json({ message: "Serverda xatolik" });
     }
 }
+//
 exports.updatePayment = async (req, res) => {
     try {
         const { id } = req.params
